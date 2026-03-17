@@ -1,289 +1,458 @@
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-.pg{font-family:'Inter',sans-serif;max-width:920px;margin:0 auto;padding:1.8rem 2rem 2rem;background:var(--color-background-primary)}
+body{font-family:'Inter',sans-serif;background:#f0f0ec;padding:1.5rem}
+.dl-bar{background:#fff;border:0.5px solid #ddd;border-radius:8px;padding:10px 16px;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin-left:auto;margin-right:auto}
+.dl-info{font-size:12px;color:#555}.dl-info strong{color:#1a1a1a;font-size:13px}
+.dl-btn{background:#0F6E56;color:#E1F5EE;border:none;font-size:11px;font-weight:700;padding:7px 18px;border-radius:20px;cursor:pointer}
+.dl-btn:hover{background:#085041}
+.page{background:#fff;max-width:1120px;margin:0 auto;padding:2rem 2.2rem 1.5rem;border:0.5px solid #ddd}
 
-.top{display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:start;margin-bottom:1.4rem}
-.badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
-.badge{font-size:10px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;background:#E1F5EE;color:#085041;padding:4px 12px;border-radius:20px}
-.badge-dark{background:#085041;color:#9FE1CB}
-.name{font-family:'Playfair Display',serif;font-size:42px;line-height:1.05;color:var(--color-text-primary);letter-spacing:-0.5px}
-.name span{font-style:italic;color:#0F6E56}
-.tagline{font-size:13px;color:var(--color-text-secondary);margin-top:7px;line-height:1.65;max-width:500px}
+.hdr{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;padding-bottom:1.1rem;border-bottom:2.5px solid #0F6E56;margin-bottom:1rem}
+.badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.badge{font-size:8.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;background:#E1F5EE;color:#085041;padding:3px 9px;border-radius:20px}
+.badge-dk{background:#085041;color:#9FE1CB}
+.name{font-family:'Playfair Display',serif;font-size:36px;line-height:1;color:#1a1a1a;letter-spacing:-.5px}
+.name em{font-style:italic;color:#0F6E56}
+.tagline{font-size:11px;color:#555;margin-top:6px;line-height:1.65;max-width:540px}
+.hdr-right{text-align:right}
+.avail{display:inline-block;background:#0F6E56;color:#E1F5EE;font-size:9.5px;font-weight:700;padding:5px 13px;border-radius:20px;margin-bottom:8px}
+.contact{font-size:10.5px;color:#555;line-height:2}
+.contact a{color:#0F6E56;text-decoration:none}
 
-.cta-block{text-align:right;padding-top:4px}
-.contact-items{font-size:12px;color:var(--color-text-secondary);line-height:2.1}
-.contact-items a{color:#0F6E56;text-decoration:none}
-.hire-btn{display:inline-block;margin-bottom:10px;font-size:11.5px;font-weight:500;background:#0F6E56;color:#E1F5EE;padding:7px 18px;border-radius:20px;letter-spacing:0.03em}
+.metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-bottom:1rem}
+.met{border:0.5px solid #9FE1CB;border-top:2.5px solid #0F6E56;border-radius:6px;background:#E1F5EE;padding:8px 6px;text-align:center}
+.met-n{font-family:'Playfair Display',serif;font-size:20px;color:#0F6E56;line-height:1}
+.met-l{font-size:8.5px;color:#085041;margin-top:3px;line-height:1.3}
 
-.divider{height:2px;border:none;background:linear-gradient(to right,#0F6E56 0%,#5DCAA5 50%,transparent 100%);margin-bottom:1.4rem}
+.quote{border-left:3px solid #0F6E56;background:#F7FAF9;padding:9px 13px;border-radius:0 5px 5px 0;margin-bottom:1rem}
+.quote-t{font-family:'Playfair Display',serif;font-size:11.5px;font-style:italic;color:#1a1a1a;line-height:1.6}
+.quote-s{font-size:9.5px;font-weight:600;color:#0F6E56;margin-top:4px}
 
-.value-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0.7rem;margin-bottom:1.4rem}
-.vs{border:0.5px solid #9FE1CB;border-radius:var(--border-radius-md);padding:0.85rem 1rem;text-align:center;position:relative;overflow:hidden}
-.vs::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#0F6E56}
-.vs-n{font-family:'Playfair Display',serif;font-size:28px;color:#0F6E56;line-height:1}
-.vs-l{font-size:10.5px;color:var(--color-text-secondary);margin-top:4px;line-height:1.4}
+.body{display:grid;grid-template-columns:1.2fr 0.8fr;gap:1.3rem;margin-bottom:1rem}
+.right-col{border-left:0.5px solid #ddd;padding-left:1.2rem}
+.sec{margin-bottom:.9rem}
+.sec:last-child{margin-bottom:0}
+.lbl{font-size:8px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#0F6E56;padding-bottom:3px;border-bottom:1px solid #9FE1CB;margin-bottom:8px;display:block}
 
-.quote-bar{border-left:3px solid #0F6E56;padding:11px 16px;background:var(--color-background-secondary);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;margin-bottom:1.4rem;font-size:13.5px;color:var(--color-text-primary);font-family:'Playfair Display',serif;font-style:italic;line-height:1.65}
-.quote-bar span{font-family:'Inter',sans-serif;font-size:11px;color:#0F6E56;font-style:normal;display:block;margin-top:6px;font-weight:500}
+.svc-cat{margin-bottom:7px}
+.svc-cat:last-child{margin-bottom:0}
+.svc-cat-title{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#0F6E56;background:#E1F5EE;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:5px}
+.svc-grid{display:grid;gap:4px}
+.svc-grid-3{grid-template-columns:1fr 1fr 1fr}
+.svc-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.svc{background:#F7FAF9;border-left:2px solid #5DCAA5;padding:5px 8px}
+.svc-t{font-size:9px;font-weight:600;color:#1a1a1a;margin-bottom:1px}
+.svc-d{font-size:8px;color:#777;line-height:1.35}
 
-.body{display:grid;grid-template-columns:1.1fr 0.9fr;gap:1.3rem;margin-bottom:1.3rem}
-
-.sec-lbl{font-size:10px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:#0F6E56;margin-bottom:9px;display:block}
-
-.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1rem}
-.offer-item{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:2px solid #5DCAA5}
-.offer-icon{font-size:14px;margin-bottom:4px}
-.offer-title{font-size:11.5px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px}
-.offer-desc{font-size:10.5px;color:var(--color-text-secondary);line-height:1.45}
-
-.card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem 1.1rem}
-.exp-row{margin-bottom:1rem;padding-bottom:1rem;border-bottom:0.5px solid var(--color-border-tertiary)}
-.exp-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
-.exp-co{font-size:13px;font-weight:500;color:var(--color-text-primary)}
-.exp-role{font-size:11.5px;color:#0F6E56;font-weight:500}
-.exp-date{font-size:10.5px;color:var(--color-text-secondary);margin-bottom:5px}
-.bul{list-style:none}
-.bul li{font-size:11.5px;color:var(--color-text-secondary);line-height:1.6;padding-left:14px;position:relative;margin-bottom:3px}
-.bul li::before{content:'→';position:absolute;left:0;color:#0F6E56;font-size:10px;top:1px}
-
-.skill-wrap{display:flex;flex-wrap:wrap;gap:5px}
-.pill{font-size:10.5px;background:var(--color-background-primary);color:var(--color-text-secondary);padding:3px 9px;border-radius:20px;border:0.5px solid var(--color-border-tertiary)}
-.pill-accent{background:#E1F5EE;color:#085041;border:0.5px solid #9FE1CB}
-
-.tool-section{margin-bottom:1rem}
-.tool-category{font-size:10px;font-weight:500;color:var(--color-text-secondary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;margin-top:10px}
-.tool-category:first-child{margin-top:0}
-.tool-wrap{display:flex;flex-wrap:wrap;gap:5px}
-.tool{font-size:10.5px;background:#E1F5EE;color:#085041;padding:3px 9px;border-radius:20px}
-.tool-new{background:#085041;color:#9FE1CB}
-
-.process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:1rem;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden}
-.ps{padding:10px 10px;text-align:center;border-right:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+.proc{display:flex;border:0.5px solid #ddd;border-radius:5px;overflow:hidden}
+.ps{flex:1;background:#F7FAF9;padding:6px 5px;text-align:center;border-right:0.5px solid #ddd}
 .ps:last-child{border-right:none}
-.ps-num{font-size:10px;color:#0F6E56;font-weight:500;margin-bottom:3px}
-.ps-label{font-size:10.5px;color:var(--color-text-primary);font-weight:500;line-height:1.3}
-.ps-sub{font-size:9.5px;color:var(--color-text-secondary);margin-top:2px;line-height:1.3}
+.ps-n{font-size:7.5px;font-weight:700;color:#0F6E56}
+.ps-t{font-size:9px;font-weight:600;color:#1a1a1a;margin:1px 0}
+.ps-s{font-size:7.5px;color:#777;line-height:1.3}
 
-.engage-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem 1.1rem}
-.engage-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
-.engage-row:last-child{border-bottom:none;padding-bottom:0}
-.engage-dot{width:28px;height:28px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px}
-.engage-title{font-size:11.5px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
-.engage-desc{font-size:10.5px;color:var(--color-text-secondary);line-height:1.4}
+/* REDESIGNED EXP CARDS */
+.exp-cards{display:flex;flex-direction:column;gap:8px}
+.exp-card{border:0.5px solid #e0e0e0;border-radius:8px;overflow:hidden}
 
-.footer{display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--color-border-tertiary);padding-top:12px;margin-top:0.2rem}
-.footer-left{font-size:11px;color:var(--color-text-secondary)}
-.footer-cta{font-size:11.5px;font-weight:500;background:#0F6E56;color:#E1F5EE;padding:6px 18px;border-radius:20px}
+.exp-card-head{background:#F7FAF9;padding:8px 12px;border-bottom:0.5px solid #e0e0e0}
+.exp-head-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}
+.exp-co-name{font-size:11.5px;font-weight:600;color:#1a1a1a}
+.exp-co-type{font-size:8.5px;color:#666;margin-top:2px}
+
+.role-tags{display:flex;gap:4px;flex-wrap:wrap}
+.role-tag{font-size:8px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.role-pmm{background:#0F6E56;color:#E1F5EE}
+.role-dg{background:#085041;color:#9FE1CB}
+.role-gm{background:#1D9E75;color:#E1F5EE}
+
+.focus-row{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.focus-label{font-size:7.5px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;margin-right:2px}
+.focus-pill{font-size:7.5px;background:#fff;color:#0F6E56;border:0.5px solid #9FE1CB;padding:2px 7px;border-radius:20px}
+
+.exp-card-body{padding:8px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+.exp-section-lbl{font-size:7.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:5px;display:flex;align-items:center;gap:4px}
+.exp-section-lbl::after{content:'';flex:1;height:0.5px;background:#eee}
+
+.exp-list{list-style:none}
+.exp-list li{font-size:8.5px;color:#555;line-height:1.5;padding-left:10px;position:relative;margin-bottom:2px}
+.exp-list li::before{content:'›';position:absolute;left:0;color:#0F6E56;font-weight:700;font-size:9px}
+
+.kpi-chips{display:flex;flex-wrap:wrap;gap:3px}
+.kpi{font-size:8px;background:#E1F5EE;color:#085041;padding:2px 7px;border-radius:20px;font-weight:600}
+.kpi-red{background:#FFF0F0;color:#A32D2D}
+
+.strat-list{list-style:none}
+.strat-list li{font-size:8.5px;color:#555;line-height:1.5;padding-left:10px;position:relative;margin-bottom:2px}
+.strat-list li::before{content:'→';position:absolute;left:0;color:#5DCAA5;font-size:8px}
+
+/* RIGHT */
+.skills{display:flex;flex-wrap:wrap;gap:3px}
+.pill{font-size:8.5px;background:#F5F5F5;color:#555;padding:2px 7px;border-radius:20px;border:0.5px solid #ddd}
+.pill-a{background:#E1F5EE;color:#085041;border-color:#9FE1CB;font-weight:600}
+.tool-cat{font-size:7.5px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;margin:7px 0 3px}
+.tool-cat:first-child{margin-top:0}
+.tools{display:flex;flex-wrap:wrap;gap:3px}
+.tool{font-size:8.5px;background:#E1F5EE;color:#085041;padding:2px 7px;border-radius:20px}
+.tool-new{background:#085041;color:#9FE1CB;font-weight:600}
+.cert-grid{display:flex;flex-direction:column;gap:4px}
+.cert-item{background:#F7FAF9;border-left:2px solid #0F6E56;padding:4px 8px}
+.cert-name{font-size:9px;font-weight:600;color:#1a1a1a}
+.cert-by{font-size:8px;color:#0F6E56}
+.cert-rel{font-size:7.5px;color:#888;margin-top:1px}
+.eng{display:flex;flex-direction:column;gap:5px}
+.eng-row{display:flex;gap:8px;align-items:flex-start;padding-bottom:5px;border-bottom:0.5px solid #eee}
+.eng-row:last-child{border-bottom:none;padding-bottom:0}
+.eng-dot{min-width:20px;height:20px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;color:#0F6E56}
+.eng-t{font-size:9.5px;font-weight:600;color:#1a1a1a;margin-bottom:1px}
+.eng-d{font-size:8.5px;color:#666;line-height:1.35}
+
+.footer{display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid #ddd;padding-top:9px}
+.footer-l{font-size:9px;color:#888}
+.footer-cta{font-size:9.5px;font-weight:700;background:#0F6E56;color:#E1F5EE;padding:5px 13px;border-radius:20px}
 </style>
 
-<div class="pg">
+<div class="dl-bar">
+  <div class="dl-info"><strong>Jithin George — Product Marketing · Freelance Portfolio</strong> &nbsp;·&nbsp; Ready to download &amp; share</div>
+  <button class="dl-btn" onclick="downloadPage()">Download HTML</button>
+</div>
 
-  <div class="top">
+<div class="page" id="onepager">
+
+  <div class="hdr">
     <div>
-      <div class="badge-row">
+      <div class="badges">
         <span class="badge">Freelance · Remote</span>
         <span class="badge">B2B SaaS PMM</span>
-        <span class="badge-dark badge">GTM · Demand Gen · Positioning</span>
+        <span class="badge badge-dk">GTM · Demand Gen · Growth</span>
+        <span class="badge badge-dk">AI-Assisted PMM</span>
       </div>
-      <div class="name">Jithin <span>George</span></div>
-      <div class="tagline">Freelance Product Marketing Consultant helping B2B SaaS companies build GTM strategies, sharpen positioning, and drive pipeline that converts — 9+ years of hands-on execution across healthcare, HRMS, LMS, and enterprise SaaS.</div>
+      <div class="name">Jithin <em>George</em></div>
+      <div class="tagline">Senior Freelance Product Marketing Consultant · 9+ years turning complex B2B SaaS products into revenue-generating GTM motions. I own positioning, pipeline, and proof — from ICP definition to brand building, content ecosystems, and sales close.</div>
     </div>
-    <div class="cta-block">
-      <div class="hire-btn">✦ Available for Projects</div>
-      <div class="contact-items">
+    <div class="hdr-right">
+      <div class="avail">✦ Open to Freelance Engagements</div>
+      <div class="contact">
         <div><a href="mailto:4jithin@gmail.com">4jithin@gmail.com</a></div>
         <div>+91-98953 91057 (WhatsApp)</div>
-        <div><a href="https://linkedin.com/in/jithingeorge-marketing-strategist">linkedin/jithingeorge</a></div>
-        <div><a href="https://growthtorevenue.wordpress.com">growthtorevenue.wordpress.com</a></div>
-        <div style="margin-top:5px;font-size:11px;color:#0F6E56;font-weight:500">IST · Async-friendly · Remote</div>
+        <div><a href="https://linkedin.com/in/jithingeorge-marketing-strategist">linkedin.com/in/jithingeorge</a></div>
+        <div><a href="https://www.linkedin.com/newsletters">PMM Newsletter on LinkedIn</a></div>
       </div>
     </div>
   </div>
 
-  <hr class="divider">
-
-  <div class="value-strip">
-    <div class="vs"><div class="vs-n">9+</div><div class="vs-l">Years B2B SaaS PMM</div></div>
-    <div class="vs"><div class="vs-n">25%</div><div class="vs-l">Product adoption lift</div></div>
-    <div class="vs"><div class="vs-n">3×</div><div class="vs-l">Inbound pipeline growth</div></div>
-    <div class="vs"><div class="vs-n">80%</div><div class="vs-l">Qualified leads increase</div></div>
+  <div class="metrics">
+    <div class="met"><div class="met-n">9+</div><div class="met-l">Years B2B SaaS PMM</div></div>
+    <div class="met"><div class="met-n">25%</div><div class="met-l">Product Adoption Lift</div></div>
+    <div class="met"><div class="met-n">3x</div><div class="met-l">Inbound Pipeline Growth</div></div>
+    <div class="met"><div class="met-n">80%</div><div class="met-l">Qualified Leads Increase</div></div>
+    <div class="met"><div class="met-n">30%</div><div class="met-l">More Demo Requests</div></div>
+    <div class="met"><div class="met-n">-18%</div><div class="met-l">Cost Per Lead Reduction</div></div>
   </div>
 
-  <div class="quote-bar">
-    "I turn complex B2B SaaS products into clear buyer narratives and GTM motions — helping your sales team close faster and your marketing programs generate pipeline that actually converts."
-    <span>— Jithin George, Freelance PMM Consultant</span>
+  <div class="quote">
+    <div class="quote-t">"I turn complex B2B SaaS products into clear buyer narratives and GTM motions — helping your sales team close faster and your marketing programs generate pipeline that actually converts."</div>
+    <div class="quote-s">— Jithin George, Freelance Product Marketing Consultant</div>
   </div>
 
   <div class="body">
     <div>
-      <span class="sec-lbl">Services offered</span>
-      <div class="offer-grid">
-        <div class="offer-item">
-          <div class="offer-icon">🗺</div>
-          <div class="offer-title">GTM Strategy & Launch</div>
-          <div class="offer-desc">End-to-end go-to-market plans, feature launch playbooks, and adoption programs</div>
+
+      <div class="sec">
+        <span class="lbl">Services offered</span>
+        <div class="svc-cat">
+          <div class="svc-cat-title">Product Marketing</div>
+          <div class="svc-grid svc-grid-4">
+            <div class="svc"><div class="svc-t">GTM Strategy &amp; Launch</div><div class="svc-d">ICP, positioning, launch playbooks, feature adoption programs</div></div>
+            <div class="svc"><div class="svc-t">Positioning &amp; Messaging</div><div class="svc-d">Value props, buyer narratives, competitive messaging frameworks</div></div>
+            <div class="svc"><div class="svc-t">Sales Enablement</div><div class="svc-d">Pitch decks, battlecards, playbooks, case studies, objection-handling</div></div>
+            <div class="svc"><div class="svc-t">Competitive Intelligence</div><div class="svc-d">Win/loss analysis, market research, category &amp; competitor positioning</div></div>
+          </div>
         </div>
-        <div class="offer-item">
-          <div class="offer-icon">🎯</div>
-          <div class="offer-title">Positioning & Messaging</div>
-          <div class="offer-desc">ICP definition, buyer personas, value props, and competitive messaging frameworks</div>
+        <div class="svc-cat">
+          <div class="svc-cat-title">Demand Generation</div>
+          <div class="svc-grid svc-grid-4">
+            <div class="svc"><div class="svc-t">Inbound Demand Programs</div><div class="svc-d">SEO, content-led GTM, gated assets, webinars &amp; lifecycle flows</div></div>
+            <div class="svc"><div class="svc-t">Paid Media &amp; ABM</div><div class="svc-d">LinkedIn, Google, Meta campaigns aligned to ICP and funnel stages</div></div>
+            <div class="svc"><div class="svc-t">Email &amp; Lifecycle</div><div class="svc-d">HubSpot automation, segmentation, nurture sequences, lead scoring</div></div>
+            <div class="svc"><div class="svc-t">Pipeline &amp; Attribution</div><div class="svc-d">MQL-to-SQL tracking, ROI dashboards, funnel optimization</div></div>
+          </div>
         </div>
-        <div class="offer-item">
-          <div class="offer-icon">⚡</div>
-          <div class="offer-title">Sales Enablement</div>
-          <div class="offer-desc">Pitch decks, battlecards, playbooks, case studies, and objection-handling content</div>
-        </div>
-        <div class="offer-item">
-          <div class="offer-icon">📈</div>
-          <div class="offer-title">Demand Generation</div>
-          <div class="offer-desc">Content-led inbound, email, paid media, webinars, ABM, and lifecycle programs</div>
-        </div>
-        <div class="offer-item">
-          <div class="offer-icon">🔍</div>
-          <div class="offer-title">Competitive Intelligence</div>
-          <div class="offer-desc">Win/loss analysis, market research, and category positioning</div>
-        </div>
-        <div class="offer-item">
-          <div class="offer-icon">🤖</div>
-          <div class="offer-title">AI-Assisted PMM</div>
-          <div class="offer-desc">Faster research, content, and GTM execution powered by modern AI tooling</div>
+        <div class="svc-cat">
+          <div class="svc-cat-title">Growth Services</div>
+          <div class="svc-grid svc-grid-3">
+            <div class="svc"><div class="svc-t">Content Ecosystem Build</div><div class="svc-d">Blog, newsletter, SEO engine, gated assets, social content system — built to scale</div></div>
+            <div class="svc"><div class="svc-t">Website &amp; Messaging Audit</div><div class="svc-d">Homepage, pricing, landing pages — rewritten for buyer clarity and conversion</div></div>
+            <div class="svc"><div class="svc-t">Brand Building</div><div class="svc-d">Brand voice, visual identity direction, thought leadership &amp; category narrative</div></div>
+          </div>
         </div>
       </div>
 
-      <span class="sec-lbl">How I work — my GTM process</span>
-      <div class="process-strip" style="margin-bottom:1rem">
-        <div class="ps"><div class="ps-num">01</div><div class="ps-label">Discover</div><div class="ps-sub">ICP, buyers, competitive landscape</div></div>
-        <div class="ps"><div class="ps-num">02</div><div class="ps-label">Position</div><div class="ps-sub">Messaging, value props, narratives</div></div>
-        <div class="ps"><div class="ps-num">03</div><div class="ps-label">Activate</div><div class="ps-sub">Launch, enablement, campaigns</div></div>
-        <div class="ps"><div class="ps-num">04</div><div class="ps-label">Measure</div><div class="ps-sub">Pipeline, adoption, revenue impact</div></div>
+      <div class="sec">
+        <span class="lbl">GTM process</span>
+        <div class="proc">
+          <div class="ps"><div class="ps-n">01</div><div class="ps-t">Discover</div><div class="ps-s">ICP, buyers, market, competitive</div></div>
+          <div class="ps"><div class="ps-n">02</div><div class="ps-t">Position</div><div class="ps-s">Messaging, value props, narratives</div></div>
+          <div class="ps"><div class="ps-n">03</div><div class="ps-t">Activate</div><div class="ps-s">Launch, enablement, campaigns</div></div>
+          <div class="ps"><div class="ps-n">04</div><div class="ps-t">Measure</div><div class="ps-s">Pipeline, adoption, revenue impact</div></div>
+        </div>
       </div>
 
-      <span class="sec-lbl">Selected experience</span>
-      <div class="card">
-        <div class="exp-row">
-          <div class="exp-co">Good Methods Global · CareStack / CareRevenue</div>
-          <div class="exp-role">Product Marketing Lead — Dental PMS & RCM SaaS</div>
-          <div class="exp-date">Apr 2022 – Mar 2025 · 3 years</div>
-          <ul class="bul">
-            <li>Full GTM ownership — positioning, ICP, launch, lifecycle; +25% adoption, +10% revenue</li>
-            <li>+30% demo requests via email, paid, webinars & content-led programs</li>
-            <li>HubSpot automation cut sales cycle by 15%; ABM for high-intent accounts</li>
-            <li>Star Award of the Year 2023 · +22% CTR · –18% CPL</li>
-          </ul>
-        </div>
-        <div class="exp-row">
-          <div class="exp-co">Applexus Technologies</div>
-          <div class="exp-role">Sr. Digital Marketing Analyst — SAP SaaS (Enterprise)</div>
-          <div class="exp-date">Jun 2019 – Jan 2021</div>
-          <ul class="bul">
-            <li>Enterprise GTM for SAP FMCG & Export-Import SaaS; translated complex solutions into buyer narratives</li>
-            <li>+40% inbound leads, +30% organic visibility, –25% bounce rate</li>
-          </ul>
-        </div>
-        <div class="exp-row">
-          <div class="exp-co">Ingenious Infosolutions</div>
-          <div class="exp-role">Digital Marketing Senior Executive — HRMS & LMS SaaS</div>
-          <div class="exp-date">Apr 2021 – Oct 2021</div>
-          <ul class="bul">
-            <li>+80% qualified leads, –70% CPC · Employee of the Month for GTM execution</li>
-          </ul>
+      <!-- REDESIGNED EXPERIENCE -->
+      <div class="sec">
+        <span class="lbl">Company experience</span>
+        <div class="exp-cards">
+
+          <!-- CARD 1 -->
+          <div class="exp-card">
+            <div class="exp-card-head">
+              <div class="exp-head-top">
+                <div>
+                  <div class="exp-co-name">Good Methods Global · CareStack &amp; CareRevenue</div>
+                  <div class="exp-co-type">B2B SaaS · Dental Practice Management &amp; Revenue Cycle Management · Series-funded, US market</div>
+                </div>
+                <div class="role-tags">
+                  <span class="role-tag role-pmm">Product Marketing Lead</span>
+                  <span class="role-tag role-dg">Demand Generation Lead</span>
+                </div>
+              </div>
+              <div class="focus-row">
+                <span class="focus-label">Focus areas</span>
+                <span class="focus-pill">GTM Strategy</span>
+                <span class="focus-pill">Product Positioning</span>
+                <span class="focus-pill">Sales Enablement</span>
+                <span class="focus-pill">Content-Led Demand</span>
+                <span class="focus-pill">ABM</span>
+                <span class="focus-pill">Lifecycle Automation</span>
+                <span class="focus-pill">Onboarding &amp; Retention</span>
+              </div>
+            </div>
+            <div class="exp-card-body">
+              <div>
+                <div class="exp-section-lbl">KPIs achieved</div>
+                <div class="kpi-chips">
+                  <span class="kpi">+25% product adoption</span>
+                  <span class="kpi">+10% revenue growth</span>
+                  <span class="kpi">+30% demo requests</span>
+                  <span class="kpi">+22% CTR</span>
+                  <span class="kpi">–15% sales cycle</span>
+                  <span class="kpi kpi-red">–18% CPL</span>
+                  <span class="kpi">35% webinar-to-demo</span>
+                  <span class="kpi">60% organic traffic growth</span>
+                  <span class="kpi">Star Award 2023</span>
+                </div>
+              </div>
+              <div>
+                <div class="exp-section-lbl">Strategies used</div>
+                <ul class="strat-list">
+                  <li>Content-led GTM &amp; SEO inbound engine</li>
+                  <li>Account-Based Marketing (ABM) for enterprise ICP</li>
+                  <li>HubSpot lifecycle automation &amp; lead scoring</li>
+                  <li>Webinar-to-demo conversion funnel</li>
+                  <li>Competitive intel &amp; win/loss analysis</li>
+                  <li>G2 &amp; Capterra review growth program</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="exp-card">
+            <div class="exp-card-head">
+              <div class="exp-head-top">
+                <div>
+                  <div class="exp-co-name">Applexus Technologies</div>
+                  <div class="exp-co-type">B2B SaaS · SAP-based FMCG &amp; Export-Import Management Software · Enterprise, US &amp; APAC clients</div>
+                </div>
+                <div class="role-tags">
+                  <span class="role-tag role-pmm">Product Marketer</span>
+                  <span class="role-tag role-gm">Growth Marketer</span>
+                </div>
+              </div>
+              <div class="focus-row">
+                <span class="focus-label">Focus areas</span>
+                <span class="focus-pill">Enterprise Messaging</span>
+                <span class="focus-pill">SEO-Led Growth</span>
+                <span class="focus-pill">Content GTM</span>
+                <span class="focus-pill">Nurture Programs</span>
+                <span class="focus-pill">Competitive Research</span>
+              </div>
+            </div>
+            <div class="exp-card-body">
+              <div>
+                <div class="exp-section-lbl">KPIs achieved</div>
+                <div class="kpi-chips">
+                  <span class="kpi">+40% inbound leads</span>
+                  <span class="kpi">+30% organic visibility</span>
+                  <span class="kpi kpi-red">–25% bounce rate</span>
+                  <span class="kpi">+55% web traffic</span>
+                </div>
+              </div>
+              <div>
+                <div class="exp-section-lbl">Strategies used</div>
+                <ul class="strat-list">
+                  <li>Enterprise value proposition &amp; buyer messaging design</li>
+                  <li>Intent-driven SEO &amp; content-led GTM</li>
+                  <li>Multi-touch nurture programs</li>
+                  <li>Website messaging &amp; conversion optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="exp-card">
+            <div class="exp-card-head">
+              <div class="exp-head-top">
+                <div>
+                  <div class="exp-co-name">Ingenious Infosolutions Pvt. Ltd.</div>
+                  <div class="exp-co-type">B2B SaaS · HRMS &amp; LMS Platforms · SMB &amp; Mid-Market, India &amp; APAC</div>
+                </div>
+                <div class="role-tags">
+                  <span class="role-tag role-dg">Demand Gen Lead</span>
+                  <span class="role-tag role-gm">Growth Marketer</span>
+                </div>
+              </div>
+              <div class="focus-row">
+                <span class="focus-label">Focus areas</span>
+                <span class="focus-pill">Paid Demand Gen</span>
+                <span class="focus-pill">Funnel Optimization</span>
+                <span class="focus-pill">Sales Enablement</span>
+                <span class="focus-pill">Pipeline Reporting</span>
+              </div>
+            </div>
+            <div class="exp-card-body">
+              <div>
+                <div class="exp-section-lbl">KPIs achieved</div>
+                <div class="kpi-chips">
+                  <span class="kpi">+80% qualified leads</span>
+                  <span class="kpi kpi-red">–70% CPC</span>
+                  <span class="kpi">Employee of the Month</span>
+                </div>
+              </div>
+              <div>
+                <div class="exp-section-lbl">Strategies used</div>
+                <ul class="strat-list">
+                  <li>Paid GTM across Google, LinkedIn &amp; Meta</li>
+                  <li>ICP-aligned funnel-stage campaign design</li>
+                  <li>ROI dashboards &amp; data-driven optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
 
-    <div>
-      <span class="sec-lbl">Core PMM skills</span>
-      <div class="card" style="margin-bottom:1rem">
-        <div class="skill-wrap">
-          <span class="pill pill-accent">GTM Strategy</span>
-          <span class="pill pill-accent">Product Positioning</span>
-          <span class="pill pill-accent">ICP & Buyer Personas</span>
+    <!-- RIGHT COL -->
+    <div class="right-col">
+
+      <div class="sec">
+        <span class="lbl">Core PMM skills</span>
+        <div class="skills">
+          <span class="pill pill-a">GTM Strategy</span>
+          <span class="pill pill-a">Product Positioning</span>
+          <span class="pill pill-a">ICP &amp; Buyer Personas</span>
           <span class="pill">Competitive Intelligence</span>
           <span class="pill">Sales Enablement</span>
           <span class="pill">Product Launches</span>
           <span class="pill">ABM</span>
           <span class="pill">Demand Generation</span>
-          <span class="pill">Content-Led Growth</span>
+          <span class="pill">Content Ecosystem</span>
+          <span class="pill">Brand Building</span>
           <span class="pill">Lifecycle Marketing</span>
           <span class="pill">Funnel Optimization</span>
           <span class="pill">Win/Loss Analysis</span>
           <span class="pill">Revenue Attribution</span>
-          <span class="pill">Onboarding & Retention</span>
+          <span class="pill">Onboarding &amp; Retention</span>
           <span class="pill">Category Design</span>
+          <span class="pill">SEO-Led Growth</span>
+          <span class="pill">Website Messaging</span>
         </div>
       </div>
 
-      <span class="sec-lbl" style="margin-top:0.2rem;display:block">Tools & platforms</span>
-      <div class="card tool-section" style="margin-bottom:1rem">
-        <div class="tool-category">PMM & GTM</div>
-        <div class="tool-wrap">
-          <span class="tool tool-new">Claude AI</span>
-          <span class="tool tool-new">Clay</span>
-          <span class="tool">G2 · Capterra</span>
-          <span class="tool">Notion</span>
-          <span class="tool">Figma</span>
-          <span class="tool">Canva</span>
+      <div class="sec">
+        <span class="lbl">Tools &amp; platforms</span>
+        <div class="tool-cat">PMM &amp; GTM</div>
+        <div class="tools">
+          <span class="tool tool-new">Claude AI</span><span class="tool tool-new">Clay</span>
+          <span class="tool">G2 · Capterra</span><span class="tool">Notion</span><span class="tool">Figma</span><span class="tool">Canva</span>
         </div>
-        <div class="tool-category">Demand Gen & CRM</div>
-        <div class="tool-wrap">
-          <span class="tool">HubSpot</span>
-          <span class="tool">Salesforce</span>
-          <span class="tool">Zoho CRM</span>
-          <span class="tool">Apollo.io</span>
-          <span class="tool">Mailchimp</span>
+        <div class="tool-cat">Demand Gen &amp; CRM</div>
+        <div class="tools">
+          <span class="tool">HubSpot</span><span class="tool">Salesforce</span><span class="tool">Zoho CRM</span><span class="tool">Apollo.io</span><span class="tool">Mailchimp</span>
         </div>
-        <div class="tool-category">Paid & Analytics</div>
-        <div class="tool-wrap">
-          <span class="tool">Google Ads</span>
-          <span class="tool">LinkedIn Ads</span>
-          <span class="tool">Meta Ads</span>
-          <span class="tool">GA4</span>
-          <span class="tool">Hotjar</span>
-          <span class="tool">Clarity</span>
+        <div class="tool-cat">Paid &amp; Analytics</div>
+        <div class="tools">
+          <span class="tool">Google Ads</span><span class="tool">LinkedIn Ads</span><span class="tool">Meta Ads</span><span class="tool">GA4</span><span class="tool">Hotjar</span><span class="tool">Clarity</span>
         </div>
-        <div class="tool-category">SEO & Research</div>
-        <div class="tool-wrap">
-          <span class="tool">SEMrush</span>
-          <span class="tool">Ahrefs</span>
-          <span class="tool">SpyFu</span>
-          <span class="tool">SparkToro</span>
+        <div class="tool-cat">SEO &amp; Research</div>
+        <div class="tools">
+          <span class="tool">SEMrush</span><span class="tool">Ahrefs</span><span class="tool">SpyFu</span><span class="tool">SparkToro</span>
         </div>
       </div>
 
-      <span class="sec-lbl" style="display:block">Education & credentials</span>
-      <div class="card" style="margin-bottom:1rem">
-        <ul class="bul">
-          <li style="margin-bottom:6px"><strong style="color:var(--color-text-primary);font-weight:500">IIM Visakhapatnam</strong> — Exec Certificate, New Product Development & Marketing Strategy (2024–25)</li>
-          <li>HubSpot Inbound Marketing · Google Ads & Analytics Certified · NLP Practitioner & Leadership · Toronto School of Management — Digital Marketing</li>
-        </ul>
+      <div class="sec">
+        <span class="lbl">Certifications</span>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-name">Inbound Marketing Certified</div>
+            <div class="cert-by">HubSpot Academy · 2024</div>
+            <div class="cert-rel">Demand Gen · Content · Lead Nurturing</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Google Ads &amp; Analytics Certified</div>
+            <div class="cert-by">Google · Active</div>
+            <div class="cert-rel">Paid Demand Gen · Attribution · Measurement</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">New Product Development &amp; Marketing Strategy</div>
+            <div class="cert-by">IIM Visakhapatnam · 2024–25</div>
+            <div class="cert-rel">Product Marketing · GTM · Launch Strategy</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Digital Marketing</div>
+            <div class="cert-by">Toronto School of Management</div>
+            <div class="cert-rel">Demand Gen · Content · Paid Media</div>
+          </div>
+        </div>
       </div>
 
-      <span class="sec-lbl" style="display:block">Engagement models</span>
-      <div class="engage-card">
-        <div class="engage-row">
-          <div class="engage-dot">🚀</div>
-          <div><div class="engage-title">Project-Based</div><div class="engage-desc">GTM launch, repositioning, or sales enablement sprints</div></div>
-        </div>
-        <div class="engage-row">
-          <div class="engage-dot">🔄</div>
-          <div><div class="engage-title">Fractional PMM</div><div class="engage-desc">Ongoing part-time PMM for growing SaaS teams without a full-time hire</div></div>
-        </div>
-        <div class="engage-row">
-          <div class="engage-dot">🧠</div>
-          <div><div class="engage-title">Strategy Consulting</div><div class="engage-desc">Positioning, messaging, and demand strategy retainer</div></div>
-        </div>
-        <div class="engage-row">
-          <div class="engage-dot">⏱</div>
-          <div><div class="engage-title">Async-Friendly</div><div class="engage-desc">IST timezone · available across time zones · remote-native</div></div>
+      <div class="sec">
+        <span class="lbl">Engagement models</span>
+        <div class="eng">
+          <div class="eng-row"><div class="eng-dot">P</div><div><div class="eng-t">Project-Based</div><div class="eng-d">GTM launch, repositioning, or sales enablement sprints</div></div></div>
+          <div class="eng-row"><div class="eng-dot">F</div><div><div class="eng-t">Fractional PMM</div><div class="eng-d">Ongoing part-time PMM embedded in your SaaS team</div></div></div>
+          <div class="eng-row"><div class="eng-dot">S</div><div><div class="eng-t">Strategy Consulting</div><div class="eng-d">Positioning, messaging, and demand strategy retainer</div></div></div>
+          <div class="eng-row"><div class="eng-dot">C</div><div><div class="eng-t">Content System Build</div><div class="eng-d">Build your end-to-end content &amp; brand ecosystem from scratch</div></div></div>
         </div>
       </div>
+
     </div>
   </div>
 
   <div class="footer">
-    <div class="footer-left">Jithin George · Freelance Product Marketing Consultant · B2B SaaS · GTM & Revenue Growth</div>
+    <div class="footer-l">Jithin George · Freelance Product Marketing Consultant · B2B SaaS · GTM &amp; Revenue Growth</div>
     <div class="footer-cta">Let's talk → 4jithin@gmail.com</div>
   </div>
+
 </div>
+
+<script>
+function downloadPage(){
+  const content=document.getElementById('onepager').outerHTML;
+  const style=document.querySelector('style').outerHTML;
+  const gf='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">';
+  const full=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jithin George - Product Marketing - Freelance</title>${gf}${style}<style>body{font-family:'Inter',sans-serif;background:#f0f0ec;padding:1.5rem}#onepager{background:#fff;max-width:1120px;margin:0 auto;padding:2rem 2.2rem 1.5rem;border:0.5px solid #ddd}</style></head><body>${content}</body></html>`;
+  const b=new Blob([full],{type:'text/html'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download='Jithin George - Product Marketing - Freelance.html';
+  a.click();
+}
+</script>
